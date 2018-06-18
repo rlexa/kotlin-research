@@ -15,7 +15,8 @@ class HandleMain : HttpHandler {
       "table" to toElements(listOf(
         "tr" to toElements(listOf("th" to "Route", "th" to "Info")),
         "tr" to toElements(listOf("td" to toElement("a href=\"/echo?a=1&b=2&c=3\"", "/echo"), "td" to "Echo service")),
-        "tr" to toElements(listOf("td" to toElement("a href=\"/generic/html\"", "/generic/html"), "td" to "Generic html view"))
+        "tr" to toElements(listOf("td" to toElement("a href=\"/generic/html\"", "/generic/html"), "td" to "Generic html view")),
+        "tr" to toElements(listOf("td" to toElement("a href=\"/generic/json\"", "/generic/json"), "td" to "Generic json view"))
       ))))))
   }
 }

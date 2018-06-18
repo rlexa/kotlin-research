@@ -5,6 +5,7 @@ import handler.HandleGeneric
 import handler.HandleMain
 import resolver.QueryResolverStatic
 import viewer.HtmlDataView
+import viewer.JsonDataView
 import java.net.InetSocketAddress
 import java.util.*
 
@@ -40,7 +41,8 @@ fun main(args: Array<String>) {
   val routes = mapOf(
     "/" to HandleMain(),
     "/echo" to HandleEcho(),
-    "/generic/html" to HandleGeneric(QueryResolverStatic(genericTestObject), HtmlDataView())
+    "/generic/html" to HandleGeneric(QueryResolverStatic(genericTestObject), HtmlDataView()),
+    "/generic/json" to HandleGeneric(QueryResolverStatic(genericTestObject), JsonDataView(), "application/json")
   )
 
   startServer(8080, routes)
