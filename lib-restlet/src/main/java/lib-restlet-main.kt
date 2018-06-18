@@ -24,7 +24,7 @@ fun startServer(port: Int, handlers: Map<String, HttpHandler>) {
 fun main(args: Array<String>) {
   println("!!! LIB-RESTLET main(): FOR TESTING PURPOSES ONLY !!!")
 
-  val genericTestObject = mapOf(
+  val testDataGeneric = mapOf(
     "array" to arrayOf(1, 2),
     "boolean" to true,
     "date" to Date(),
@@ -41,8 +41,8 @@ fun main(args: Array<String>) {
   val routes = mapOf(
     "/" to HandleMain(),
     "/echo" to HandleEcho(),
-    "/generic/html" to HandleGeneric(QueryResolverStatic(genericTestObject), HtmlDataView()),
-    "/generic/json" to HandleGeneric(QueryResolverStatic(genericTestObject), JsonDataView(), "application/json")
+    "/generic/html" to HandleGeneric(QueryResolverStatic(testDataGeneric), HtmlDataView()),
+    "/generic/json" to HandleGeneric(QueryResolverStatic(testDataGeneric), JsonDataView(), "application/json")
   )
 
   startServer(8080, routes)
